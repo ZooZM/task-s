@@ -1,0 +1,206 @@
+Container1(
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.all(30),
+            padding: EdgeInsets.all(5),
+            //decoration: BoxDecoration(
+              //  color: Colors.blue,
+                //border: Border.all(color: Colors.black, width: 5),
+                //borderRadius: BorderRadius.only(
+                  //  bottomLeft: Radius.circular(20),
+                    //topRight: Radius.circular(20)),
+                //image: DecorationImage(
+                  //fit: BoxFit.cover,
+                  //image: AssetImage("images/1.jpg"),
+                //)),
+                //alignment: Alignment.bottomCenter,
+            child: Text("Hello world ",
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                  wordSpacing: 5,
+                  decoration: TextDecoration.underline,
+                  shadows: [
+                    Shadow(
+                        color: Colors.red,
+                        blurRadius: 10.0,
+                        offset: Offset(2.0, 2.0),
+                        )],
+                ),
+                  textAlign: TextAlign.start,
+                  )
+                    )
+                   
+                   
+                   
+                   
+                    Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+          side: BorderSide(color: Colors.black87,width: 3)
+        ),
+        child: Text("Zeyad", style: TextStyle(fontSize: 60),textAlign: TextAlign.center,),
+        color: Colors.blue,
+        elevation: 10,
+        shadowColor: Colors.blue,
+        margin: EdgeInsets.all(20),
+               )
+                
+                
+                
+                
+                
+                Column(
+          mainAxisAlignment: MainAxisAlignment
+              .center, //to ((center,start,...) ,(spaceBetween) to divide evenly) all that contain
+          mainAxisSize: MainAxisSize.min, //atleast hieght
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  side: BorderSide(color: Colors.black87, width: 3)),
+              child: Text(
+                "zeyad",
+                style: TextStyle(fontSize: 60),
+                textAlign: TextAlign.center,
+              ),
+              color: Colors.blue,
+              elevation: 10,
+              shadowColor: Colors.blue,
+              margin: EdgeInsets.all(20),
+            )
+          ],
+        )
+        //
+        import 'package:flutter/material.dart';
+
+void main() {
+  for (int i = 0; i < 10; i++) {
+    runApp(MyApp());
+  }
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: homepage());
+  }
+}
+
+class homepage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body:Container(
+          child: Row(children: [Text("zeyad",style: TextStyle(fontSize: 60)),Text("Mostafa",style: TextStyle(fontSize: 60))],),
+        )
+        
+        );
+  }
+}
+
+
+\\button
+// ignore_for_file: prefer_const_constructors
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+// This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Geeks For Geeks',
+      theme: ThemeData(
+        // this is the primary color. which automatically
+        // used by the appbar and elevated button
+        primarySwatch: Colors.green,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+// this is the indexing if we not give
+// it than also it start form the 0 indexing.
+  var currentindex = 0;
+
+  void buttonClicked() {
+    setState(() {
+      // setstate using for the rerender the screen
+      // if we not use than it not show the sceond text
+      currentindex = currentindex + 1;
+    });
+    // this is the output when you tap on the button but
+    // it showing you in console not on screen
+    print("button one");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var questions = [
+      // list of text which the text get form here
+      "انا عارف انت قد إيه تعبان وبتتعب عشان تحقق الي نفسك فيه بس انت عارف...",
+      "محدش مهتم",
+    ];
+
+    return Scaffold(
+      appBar: AppBar(
+        // this is app bar text
+        title: Text("Zeyad"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment
+              .center,
+          // for vertical centere and padding for the horizontal center
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              // questions.elementAt(1),
+              questions[
+              currentindex],
+              // here index and text come form the upper list
+              // of question and indexing start form the 0
+              style: TextStyle(fontSize: 30),
+            ),
+            SizedBox(
+              // this is use for giving the spacing
+              // between the text and the button
+              height:
+              40,
+            ),
+            ElevatedButton(
+              onPressed: buttonClicked,
+              child: Text(
+                  "دوس هنا كدة يمعلم"),
+              // this is the button text and we use the elevated
+              // button and it take the primary color but
+              // we can change the elevated button colors.
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
